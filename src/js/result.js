@@ -37,7 +37,7 @@ $(() => {
         $('.loading-container').hide();
         const price = (data.totalFee / 100).toFixed(2);
         showStatus(data.status);
-        $('.amount').text(price + '' + data.status);
+        $('.amount').text(price);
         count = 0;
         return;
       }
