@@ -36,7 +36,7 @@ $(() => {
   function wechatPay(url) {
     if (isAndroid) {
       location.href = url
-        + `&redirect_url=${encodeURI('http://h5pay.mmcoco.com/result?orderNo=' + this.orderNo)}`;
+        + `&redirect_url=${encodeURI('http://h5pay.mmcoco.com/result?orderNo=' + orderNo)}`;
     } else if (isiOS) {
       location.href = url
         + `&redirect_url=${encodeURI('MITU://')}`;
