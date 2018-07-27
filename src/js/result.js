@@ -41,7 +41,9 @@ $(() => {
         count = 0;
         return;
       }
-      getOrderInfo();
+      setTimeout(() => {
+        getOrderInfo();
+      }, 1000);
     });
   }
 
