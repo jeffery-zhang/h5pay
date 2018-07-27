@@ -32,11 +32,13 @@ $(() => {
     };
     get().getOrderInfo(params).then(res => {
       const data = res.data;
+      count++;
       if (data.status === 1 || data.status > 3 || count >= 10) {
         $('.loading-container').hide();
         const price = (data.totalFee / 100).toFixed(2);
         showStatus(data.status);
         $('.amount').text(price);
+        count = 0;
         return;
       }
       getOrderInfo();
