@@ -33,6 +33,7 @@ $(() => {
     get().getOrderInfo(params).then(res => {
       const data = res.data;
       count++;
+      alert(data);
       if (data.status === 1 || data.status > 3 || count >= 10) {
         $('.loading-container').hide();
         const price = (data.totalFee / 100).toFixed(2);
