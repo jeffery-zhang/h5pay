@@ -6,6 +6,8 @@ import getQuery from 'service/getQuery'
 import './common';
 
 $(() => {
+  if (!isMitu) return;
+
   const orderNo = getQuery('orderNo');
   let tradeMethod = 'WXPAY';
 
