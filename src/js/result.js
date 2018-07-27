@@ -9,6 +9,7 @@ $(() => {
 
   const orderNo = getQuery('orderNo');
   let result = '';
+  let count = 0;
 
   if (!orderNo) return;
 
@@ -17,8 +18,7 @@ $(() => {
     if (status === 1) {
       result = 'success';
       text = '支付成功';
-    }
-    if (status > 3) {
+    } else {
       result = 'fail';
       text = '支付失败';
     }
@@ -31,11 +31,15 @@ $(() => {
       orderNo,
     };
     get().getOrderInfo(params).then(res => {
-      $('.loading-container').hide();
       const data = res.data;
-      const price = (data.totalFee / 100).toFixed(2);
-      showStatus(data.status);
-      $('.amount').text(price);
+      if (data.status === 1 || data.status > 3 || count >= 10) {
+        $('.loading-container').hide();
+        const price = (data.totalFee / 100).toFixed(2);
+        showStatus(data.status);
+        $('.amount').text(price);
+        return;
+      }
+      getOrderInfo();
     });
   }
 
@@ -54,7 +58,7 @@ $(() => {
     }
   }
 
-  setTimeout(getOrderInfo, 2000);
+  getOrderInfo();
 
   $('.back').click(backApp);
 });
