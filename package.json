@@ -1,7 +1,7 @@
 {
-  "name": "linkdom",
+  "name": "h5pay",
   "version": "1.0.0",
-  "description": "linkdom website",
+  "description": "h5pay",
   "main": "",
   "scripts": {
     "build": "webpack --config ./scripts/webpack.config.js",
@@ -9,11 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zj781119282/linkdom.git"
+    "url": "https://github.com/jeffery-zhang/h5pay.git"
   },
-  "author": "DarCreator Frontend Technical Team",
-  "license": "proprietary",
-  "private": true,
+  "author": "jeffery-zhang",
+  "license": "ISC",
+  "private": false,
   "dependencies": {
     "axios": "^0.18.0",
     "jquery": "^3.3.1"
