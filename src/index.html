@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>米兔收银台</title>
+</head>
+<body>
+  <div class="wrapper pay-wrapper hidden">
+    <div class="payment-info">
+      <h1 class="sum"></h1>
+      <p class="order-info">
+        <span>详情</span>
+        <span style="opacity: .8;" class="order-content"></span>
+      </p>
+      <p class="order-info">
+        <span>订单号</span>
+        <span style="opacity: .8;" class="order-no"></span>
+      </p>
+    </div>
+    <p style="margin: 20px 17px 8px;font-size: 14px;color: #ccc">请选择付款方式</p>
+    <div class="pay-methods">
+      <div class="payment selected" data-method="WXPAY">
+        <div class="payment-name">
+          <i class="icon wxpay"></i>
+          <span style="margin-left: 10px;">微信支付</span>
+        </div>
+        <span class="radio"></span>
+      </div>
+      <div class="payment" data-method="ALIPAY">
+        <div class="payment-name">
+          <i class="icon alipay"></i>
+          <span style="margin-left: 10px;">支付宝</span>
+        </div>
+        <span class="radio"></span>
+      </div>
+    </div>
+    <a href="javascript:;" class="pay-button">确认支付</a>
+  </div>
+</body>
+</html>
