@@ -1,12 +1,10 @@
-import axios from 'axios';
+import axios from 'axios'
+import qs from 'qs'
 
 export default function () {
   const method = 'post';
   const postFunction = (url, params) => {
-    const data = new URLSearchParams();
-    Object.keys(params).forEach(key => {
-      data.append(key, params[key]);
-    });
+    const data = qs.stringify(params);
     return axios({
       method,
       url,
